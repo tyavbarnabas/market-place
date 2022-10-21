@@ -39,7 +39,7 @@ public class CartController {
         return new ResponseEntity<>(new ApiResponse(true,"Added to cart"), HttpStatus.CREATED);
 
     }
-
+    @GetMapping("/")
     public ResponseEntity<CartDto>getCartItems(@RequestParam("token")String token) throws AuthenticationFailException {
         authenticationServices.authenticate(token);
         User user = authenticationServices.getUser(token);
